@@ -1,0 +1,110 @@
+time 1650751349
+new [description:"Настроить интернет" entry:"1650751349" modified:"1650751349" status:"pending" uuid:"4a55ce4e-44cc-4399-a256-75bea27b6941"]
+---
+time 1650751537
+new [description:"настроить zathurу и alacritty как default программы" entry:"1650751537" modified:"1650751537" status:"pending" uuid:"68c901cd-68ee-44a0-ab33-77a0cb4626c4"]
+---
+time 1650751621
+new [description:"выполнять task при открытии терминала чтобы видеть список todo" entry:"1650751621" modified:"1650751621" status:"pending" uuid:"5f1fd49d-3399-4fd6-a3a0-796d86076753"]
+---
+time 1650824139
+old [description:"Настроить интернет" entry:"1650751349" modified:"1650751349" status:"pending" uuid:"4a55ce4e-44cc-4399-a256-75bea27b6941"]
+new [description:"Настроить интернет" end:"1650824139" entry:"1650751349" modified:"1650824139" status:"completed" uuid:"4a55ce4e-44cc-4399-a256-75bea27b6941"]
+---
+time 1650829717
+old [description:"настроить zathurу и alacritty как default программы" entry:"1650751537" modified:"1650751537" status:"pending" uuid:"68c901cd-68ee-44a0-ab33-77a0cb4626c4"]
+new [description:"настроить zathurу и alacritty как default программы" end:"1650829717" entry:"1650751537" modified:"1650829717" status:"completed" uuid:"68c901cd-68ee-44a0-ab33-77a0cb4626c4"]
+---
+time 1650829822
+old [description:"выполнять task при открытии терминала чтобы видеть список todo" entry:"1650751621" modified:"1650751621" status:"pending" uuid:"5f1fd49d-3399-4fd6-a3a0-796d86076753"]
+new [description:"выполнять task при открытии терминала чтобы видеть список todo" end:"1650829822" entry:"1650751621" modified:"1650829822" status:"completed" uuid:"5f1fd49d-3399-4fd6-a3a0-796d86076753"]
+---
+time 1651394590
+new [description:"заказать курсовую" entry:"1651394590" modified:"1651394590" status:"pending" uuid:"a9f413ec-d85b-44e1-abd5-917dc04b6572"]
+---
+time 1651394598
+new [description:"посмотреть Дашин перевод" entry:"1651394598" modified:"1651394598" status:"pending" uuid:"6d46c6d8-36fb-4f08-bc1c-c908682daf76"]
+---
+time 1651394617
+new [description:"копия поверки счетчиков" entry:"1651394617" modified:"1651394617" status:"pending" uuid:"00a8d62d-995f-4996-a57f-a01edc1f3586"]
+---
+time 1651394625
+new [description:"отнести копию в упр комп" entry:"1651394625" modified:"1651394625" status:"pending" uuid:"950fb05d-e6b9-49bc-80af-e6daa7cb4aff"]
+---
+time 1651394632
+new [description:"выставить авито" entry:"1651394632" modified:"1651394632" status:"pending" uuid:"7395bc30-31b4-4ca0-be49-e39594dd2954"]
+---
+time 1651394662
+new [description:"скинуть маме инструкцию по сберу" entry:"1651394662" modified:"1651394662" status:"pending" uuid:"f89e530d-6192-4baf-8b2e-2bbf2923d7d0"]
+---
+time 1651394688
+new [description:"занести дорожку домой" entry:"1651394688" modified:"1651394688" status:"pending" uuid:"5f7cb3bb-8b5e-4999-9986-c7980ba5cf32"]
+---
+time 1651396157
+old [description:"скинуть маме инструкцию по сберу" entry:"1651394662" modified:"1651394662" status:"pending" uuid:"f89e530d-6192-4baf-8b2e-2bbf2923d7d0"]
+new [description:"скинуть маме инструкцию по сберу" end:"1651396157" entry:"1651394662" modified:"1651396157" status:"completed" uuid:"f89e530d-6192-4baf-8b2e-2bbf2923d7d0"]
+---
+time 1651401164
+new [description:"настроить eslint в виме" entry:"1651401164" modified:"1651401164" status:"pending" uuid:"b5ca0ca9-b858-4c5a-92ad-56ac986eea20"]
+---
+time 1651401171
+old [description:"посмотреть Дашин перевод" entry:"1651394598" modified:"1651394598" status:"pending" uuid:"6d46c6d8-36fb-4f08-bc1c-c908682daf76"]
+new [description:"посмотреть Дашин перевод" end:"1651401171" entry:"1651394598" modified:"1651401171" status:"completed" uuid:"6d46c6d8-36fb-4f08-bc1c-c908682daf76"]
+---
+time 1651401311
+new [description:"узнать по рабочему договору" entry:"1651401311" modified:"1651401311" status:"pending" uuid:"a4c81d41-e676-442d-a4f8-5374019c936f"]
+---
+time 1651404482
+new [description:"прочитать https:\/\/web.dsgnsystem.ru\/#\/design\/dynamic-indents" entry:"1651404482" modified:"1651404482" status:"pending" uuid:"4ec2e2a4-5eaf-4921-b5a2-d5a2410f1e50"]
+---
+time 1651413053
+old [description:"заказать курсовую" entry:"1651394590" modified:"1651394590" status:"pending" uuid:"a9f413ec-d85b-44e1-abd5-917dc04b6572"]
+new [description:"заказать курсовую" end:"1651413053" entry:"1651394590" modified:"1651413053" status:"completed" uuid:"a9f413ec-d85b-44e1-abd5-917dc04b6572"]
+---
+time 1651413074
+new [description:"заказать курсовую" entry:"1651413074" modified:"1651413074" status:"pending" uuid:"c890a6d0-fa80-412f-8ffc-c512cba1539f"]
+---
+time 1651415125
+new [description:"закрыть кредит" entry:"1651415125" modified:"1651415125" status:"pending" uuid:"2ea002b3-5e80-4ab9-86af-8f87f971c662"]
+---
+time 1651428159
+old [description:"закрыть кредит" entry:"1651415125" modified:"1651415125" status:"pending" uuid:"2ea002b3-5e80-4ab9-86af-8f87f971c662"]
+new [description:"закрыть кредит" end:"1651428159" entry:"1651415125" modified:"1651428159" status:"completed" uuid:"2ea002b3-5e80-4ab9-86af-8f87f971c662"]
+---
+time 1651484084
+old [description:"заказать курсовую" entry:"1651413074" modified:"1651413074" status:"pending" uuid:"c890a6d0-fa80-412f-8ffc-c512cba1539f"]
+new [description:"заказать курсовую" end:"1651484084" entry:"1651413074" modified:"1651484084" status:"completed" uuid:"c890a6d0-fa80-412f-8ffc-c512cba1539f"]
+---
+time 1651484091
+old [description:"узнать по рабочему договору" entry:"1651401311" modified:"1651401311" status:"pending" uuid:"a4c81d41-e676-442d-a4f8-5374019c936f"]
+new [description:"узнать по рабочему договору" end:"1651484091" entry:"1651401311" modified:"1651484091" status:"completed" uuid:"a4c81d41-e676-442d-a4f8-5374019c936f"]
+---
+time 1651484096
+old [description:"занести дорожку домой" entry:"1651394688" modified:"1651394688" status:"pending" uuid:"5f7cb3bb-8b5e-4999-9986-c7980ba5cf32"]
+new [description:"занести дорожку домой" end:"1651484096" entry:"1651394688" modified:"1651484096" status:"completed" uuid:"5f7cb3bb-8b5e-4999-9986-c7980ba5cf32"]
+---
+time 1651486365
+old [description:"выставить авито" entry:"1651394632" modified:"1651394632" status:"pending" uuid:"7395bc30-31b4-4ca0-be49-e39594dd2954"]
+new [description:"выставить авито" end:"1651486365" entry:"1651394632" modified:"1651486365" status:"completed" uuid:"7395bc30-31b4-4ca0-be49-e39594dd2954"]
+---
+time 1651491450
+old [description:"настроить eslint в виме" entry:"1651401164" modified:"1651401164" status:"pending" uuid:"b5ca0ca9-b858-4c5a-92ad-56ac986eea20"]
+new [description:"настроить eslint в виме" end:"1651491450" entry:"1651401164" modified:"1651491450" status:"completed" uuid:"b5ca0ca9-b858-4c5a-92ad-56ac986eea20"]
+---
+time 1651740768
+new [description:"dunst" entry:"1651740768" modified:"1651740768" status:"pending" uuid:"4892f33a-1811-4748-80ab-b09cb37177e0"]
+---
+time 1651740784
+new [description:"blabla" entry:"1651740784" modified:"1651740784" status:"pending" uuid:"2b438270-3389-402c-ac80-76786ed7d779"]
+---
+time 1651740792
+new [description:"blabla" entry:"1651740792" modified:"1651740792" status:"pending" uuid:"07cb035e-9977-49c7-815a-39330b78af5d"]
+---
+time 1651740804
+old [description:"blabla" entry:"1651740784" modified:"1651740784" status:"pending" uuid:"2b438270-3389-402c-ac80-76786ed7d779"]
+new [description:"blabla" end:"1651740804" entry:"1651740784" modified:"1651740804" status:"completed" uuid:"2b438270-3389-402c-ac80-76786ed7d779"]
+---
+time 1651740804
+old [description:"blabla" entry:"1651740792" modified:"1651740792" status:"pending" uuid:"07cb035e-9977-49c7-815a-39330b78af5d"]
+new [description:"blabla" end:"1651740804" entry:"1651740792" modified:"1651740804" status:"completed" uuid:"07cb035e-9977-49c7-815a-39330b78af5d"]
+---

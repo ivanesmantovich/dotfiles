@@ -1,0 +1,32 @@
+{"description":"Настроить интернет","entry":"20220423T220229Z","modified":"20220423T220229Z","status":"pending","uuid":"4a55ce4e-44cc-4399-a256-75bea27b6941"}
+{"description":"настроить zathurу и alacritty как default программы","entry":"20220423T220537Z","modified":"20220423T220537Z","status":"pending","uuid":"68c901cd-68ee-44a0-ab33-77a0cb4626c4"}
+{"description":"выполнять task при открытии терминала чтобы видеть список todo","entry":"20220423T220701Z","modified":"20220423T220701Z","status":"pending","uuid":"5f1fd49d-3399-4fd6-a3a0-796d86076753"}
+{"description":"Настроить интернет","end":"20220424T181539Z","entry":"20220423T220229Z","modified":"20220424T181539Z","status":"completed","uuid":"4a55ce4e-44cc-4399-a256-75bea27b6941"}
+{"description":"настроить zathurу и alacritty как default программы","end":"20220424T194837Z","entry":"20220423T220537Z","modified":"20220424T194837Z","status":"completed","uuid":"68c901cd-68ee-44a0-ab33-77a0cb4626c4"}
+{"description":"выполнять task при открытии терминала чтобы видеть список todo","end":"20220424T195022Z","entry":"20220423T220701Z","modified":"20220424T195022Z","status":"completed","uuid":"5f1fd49d-3399-4fd6-a3a0-796d86076753"}
+{"description":"заказать курсовую","entry":"20220501T084310Z","modified":"20220501T084310Z","status":"pending","uuid":"a9f413ec-d85b-44e1-abd5-917dc04b6572"}
+{"description":"посмотреть Дашин перевод","entry":"20220501T084318Z","modified":"20220501T084318Z","status":"pending","uuid":"6d46c6d8-36fb-4f08-bc1c-c908682daf76"}
+{"description":"копия поверки счетчиков","entry":"20220501T084337Z","modified":"20220501T084337Z","status":"pending","uuid":"00a8d62d-995f-4996-a57f-a01edc1f3586"}
+{"description":"отнести копию в упр комп","entry":"20220501T084345Z","modified":"20220501T084345Z","status":"pending","uuid":"950fb05d-e6b9-49bc-80af-e6daa7cb4aff"}
+{"description":"выставить авито","entry":"20220501T084352Z","modified":"20220501T084352Z","status":"pending","uuid":"7395bc30-31b4-4ca0-be49-e39594dd2954"}
+{"description":"скинуть маме инструкцию по сберу","entry":"20220501T084422Z","modified":"20220501T084422Z","status":"pending","uuid":"f89e530d-6192-4baf-8b2e-2bbf2923d7d0"}
+{"description":"занести дорожку домой","entry":"20220501T084448Z","modified":"20220501T084448Z","status":"pending","uuid":"5f7cb3bb-8b5e-4999-9986-c7980ba5cf32"}
+{"description":"скинуть маме инструкцию по сберу","end":"20220501T090917Z","entry":"20220501T084422Z","modified":"20220501T090917Z","status":"completed","uuid":"f89e530d-6192-4baf-8b2e-2bbf2923d7d0"}
+{"description":"настроить eslint в виме","entry":"20220501T103244Z","modified":"20220501T103244Z","status":"pending","uuid":"b5ca0ca9-b858-4c5a-92ad-56ac986eea20"}
+{"description":"посмотреть Дашин перевод","end":"20220501T103251Z","entry":"20220501T084318Z","modified":"20220501T103251Z","status":"completed","uuid":"6d46c6d8-36fb-4f08-bc1c-c908682daf76"}
+{"description":"узнать по рабочему договору","entry":"20220501T103511Z","modified":"20220501T103511Z","status":"pending","uuid":"a4c81d41-e676-442d-a4f8-5374019c936f"}
+{"description":"прочитать https:\/\/web.dsgnsystem.ru\/#\/design\/dynamic-indents","entry":"20220501T112802Z","modified":"20220501T112802Z","status":"pending","uuid":"4ec2e2a4-5eaf-4921-b5a2-d5a2410f1e50"}
+{"description":"заказать курсовую","end":"20220501T135053Z","entry":"20220501T084310Z","modified":"20220501T135053Z","status":"completed","uuid":"a9f413ec-d85b-44e1-abd5-917dc04b6572"}
+{"description":"заказать курсовую","entry":"20220501T135114Z","modified":"20220501T135114Z","status":"pending","uuid":"c890a6d0-fa80-412f-8ffc-c512cba1539f"}
+{"description":"закрыть кредит","entry":"20220501T142525Z","modified":"20220501T142525Z","status":"pending","uuid":"2ea002b3-5e80-4ab9-86af-8f87f971c662"}
+{"description":"закрыть кредит","end":"20220501T180239Z","entry":"20220501T142525Z","modified":"20220501T180239Z","status":"completed","uuid":"2ea002b3-5e80-4ab9-86af-8f87f971c662"}
+{"description":"заказать курсовую","end":"20220502T093444Z","entry":"20220501T135114Z","modified":"20220502T093444Z","status":"completed","uuid":"c890a6d0-fa80-412f-8ffc-c512cba1539f"}
+{"description":"узнать по рабочему договору","end":"20220502T093451Z","entry":"20220501T103511Z","modified":"20220502T093451Z","status":"completed","uuid":"a4c81d41-e676-442d-a4f8-5374019c936f"}
+{"description":"занести дорожку домой","end":"20220502T093456Z","entry":"20220501T084448Z","modified":"20220502T093456Z","status":"completed","uuid":"5f7cb3bb-8b5e-4999-9986-c7980ba5cf32"}
+{"description":"выставить авито","end":"20220502T101245Z","entry":"20220501T084352Z","modified":"20220502T101245Z","status":"completed","uuid":"7395bc30-31b4-4ca0-be49-e39594dd2954"}
+{"description":"настроить eslint в виме","end":"20220502T113730Z","entry":"20220501T103244Z","modified":"20220502T113730Z","status":"completed","uuid":"b5ca0ca9-b858-4c5a-92ad-56ac986eea20"}
+{"description":"dunst","entry":"20220505T085248Z","modified":"20220505T085248Z","status":"pending","uuid":"4892f33a-1811-4748-80ab-b09cb37177e0"}
+{"description":"blabla","entry":"20220505T085304Z","modified":"20220505T085304Z","status":"pending","uuid":"2b438270-3389-402c-ac80-76786ed7d779"}
+{"description":"blabla","entry":"20220505T085312Z","modified":"20220505T085312Z","status":"pending","uuid":"07cb035e-9977-49c7-815a-39330b78af5d"}
+{"description":"blabla","end":"20220505T085324Z","entry":"20220505T085304Z","modified":"20220505T085324Z","status":"completed","uuid":"2b438270-3389-402c-ac80-76786ed7d779"}
+{"description":"blabla","end":"20220505T085324Z","entry":"20220505T085312Z","modified":"20220505T085324Z","status":"completed","uuid":"07cb035e-9977-49c7-815a-39330b78af5d"}
