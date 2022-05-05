@@ -1,0 +1,74 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        output_format = "i3bar"
+        colors = true
+        color_good = "#98971A"
+        color_bad = "#CC241D"
+        separator = " "
+        interval = 3
+}
+
+order += "ethernet _first_"
+order += "volume master"
+order += "disk /"
+order += "memory"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "tztime local"
+
+ethernet _first_ {
+        format_up = "E: up"
+        format_down = "E: down"
+}
+
+volume master {
+    format = " %volume" # шаблон громкости в активном состоянии
+    format_muted = " %volume" # шаблон громкости в состоянии muted (без звука)
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+disk "/" {
+        format = " %avail"
+}
+
+memory {
+        format = " %used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+cpu_usage {
+    # %usage - процентное использование ЦП
+    # %cpu<N> - начиная с %cpu0 и далее показывает использование ядер
+    format = " %usage"
+
+    # доступны параметры:
+    # degraded_threshold, окрас в желтый, по умолчанию 90
+    # max_threshold, окрас в красный, по умолчанию 95
+    # и кастомные форматы для них
+    # format_above_degraded_threshold и format_above_threshold
+}
+
+cpu_temperature 0 {
+    format = " %degrees°C"
+
+    # верхний порог температуры, при достижении которого
+    # вывод окрасится красным,
+    # и формат изменится на format_above_threshold
+    max_threshold = "80"
+    format_above_threshold = " %degrees"
+    path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+tztime local {
+        format = " %d %b, %A  %H:%M:%S"
+}
