@@ -9,3 +9,4 @@ require('completions')
 
 require('keybindings')
 require('colorscheme')
+

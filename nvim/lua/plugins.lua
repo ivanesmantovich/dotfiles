@@ -31,7 +31,7 @@ Plug('nvim-treesitter/nvim-treesitter-textobjects')
 
 -- Language Server Protocol
 Plug('williamboman/mason.nvim')
-Plug 'williamboman/mason-lspconfig.nvim'
+Plug('williamboman/mason-lspconfig.nvim')
 Plug('neovim/nvim-lspconfig')
 
 -- Completions Engine

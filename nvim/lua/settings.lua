@@ -1,6 +1,13 @@
+local vim = vim -- to avoid undefined vim warning all down the file
+
 -- Get or set options. Like `:set`. Invalid key is an error. :help vim.o
 
 vim.o.guicursor = '' -- Setup cursor later
+
+-- %t is filename, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
+vim.o.statusline = '%t %#Comment#%{FugitiveHead()}%0*%=line %l out of %L'
+
+vim.o.laststatus = 3
 
 vim.o.updatetime = 100
 vim.o.timeoutlen = 300
@@ -12,7 +19,7 @@ vim.g.maplocalleader = ' '
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-vim.o.number = false 
+vim.o.number = false
 
 vim.o.wrap = false
 vim.o.signcolumn = 'auto'

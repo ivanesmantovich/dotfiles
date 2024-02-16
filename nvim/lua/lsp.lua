@@ -5,7 +5,7 @@ local mason_lspconfig = require('mason-lspconfig')
 local language_servers_to_install = {
   html = {},      -- HTML
   cssls = {},     -- CSS
-  tsserver = {}   -- JavaScript, TypeScript
+  tsserver = {},   -- JavaScript, TypeScript
 }
 
 -- Preinstall Language Servers
