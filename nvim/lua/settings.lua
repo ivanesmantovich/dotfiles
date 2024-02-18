@@ -4,8 +4,9 @@ local vim = vim -- to avoid undefined vim warning all down the file
 
 vim.o.guicursor = '' -- Setup cursor later
 
--- %t is filename, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
-vim.o.statusline = '%t %#Comment#%{FugitiveHead()}%0*%=line %l out of %L'
+-- %t is filename, %m is modified flag, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
+vim.o.statusline = '%t %m %#Comment#%{FugitiveHead()}%0*%=line %l out of %L'
+
 
 vim.o.laststatus = 3
 
