@@ -1,3 +1,5 @@
+local vim = vim -- to avoid undefined vim warning all down the file
+
 vim.o.background="light"
 -- :Inspect to check highlighting under the cursor
 vim.cmd([[

@@ -26,7 +26,7 @@ Plug('tpope/vim-fugitive')
 Plug('lewis6991/gitsigns.nvim')
 
 -- Syntax tree parser, highlight, edit, and navigate code
-Plug('nvim-treesitter/nvim-treesitter', { ["do"] = ':TSUpdate' })
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-treesitter/nvim-treesitter-textobjects')
 
 -- Language Server Protocol
@@ -35,10 +35,15 @@ Plug('williamboman/mason-lspconfig.nvim')
 Plug('neovim/nvim-lspconfig')
 
 -- Completions Engine
-Plug 'hrsh7th/nvim-cmp' 
-
+Plug('hrsh7th/nvim-cmp')
+Plug('L3MON4D3/LuaSnip')
 -- Completions Sources
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-path'
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-path')
+
+-- Telescope
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.5' })
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 vim.call('plug#end')

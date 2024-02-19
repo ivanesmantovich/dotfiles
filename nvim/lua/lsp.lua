@@ -1,3 +1,5 @@
+local vim = vim -- to avoid undefined vim warning all down the file
+
 -- Mason (Install, update and delete Language Servers, DAP servers, linters and formatters)
 require("mason").setup()
 local mason_lspconfig = require('mason-lspconfig')

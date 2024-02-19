@@ -1,3 +1,5 @@
+local vim = vim -- to avoid undefined vim warning all down the file
+
 -- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
