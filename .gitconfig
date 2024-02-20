@@ -1,0 +1,34 @@
+[user]
+	email = ivanesmantovich@gmail.com
+	name = Ivan Esmantovich
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[core]
+	editor = nvim
+
+[diff]
+        tool = difftastic
+	algorithm = histogram
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+
+[alias]
+        dft = difftool # allows to use git dft instead of git difftool
+
+[merge]
+	conflictStyle = zdiff3 # https://ductile.systems/zdiff3
+
+[push]
+	default = current # always push the local branch to a remote branch with the same name
+
+[branch]
+	sort = -committerdate # sort by most recently used branches instead of alphabetical
