@@ -4,72 +4,95 @@
   "editor.fontSize": 18,
   "terminal.integrated.fontFamily": "SF Mono",
   "terminal.integrated.fontSize": 13,
+
+  // Themes
+  "workbench.colorTheme": "Sun and Moon",
   "workbench.iconTheme": "chalice-icon-theme",
+  "workbench.productIconTheme": "icons-carbon",
+
+  // Disable the noise
+  "editor.lineNumbers": "off",
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.wrappingIndent": "none",
+  "workbench.editor.showTabs": "none",
+  "workbench.activityBar.location": "hidden",
+  "editor.renderWhitespace": "none",
+  "workbench.tree.renderIndentGuides": "none",
+  "editor.glyphMargin": false,
+  "editor.showFoldingControls": "never",
+  "editor.lightbulb.enabled": "off",
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.accessibilitySupport": "off",
+  "telemetry.telemetryLevel": "off",
+
+  // UI
+  "window.titleBarStyle": "custom",
+  "window.nativeTabs": false,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.renderLineHighlight": "line",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.tree.indent": 14,
+  "editor.scrollbar.verticalScrollbarSize": 4,
+  "editor.scrollbar.horizontalScrollbarSize": 4,
 
   // Syntax Highlighting
   "editor.semanticHighlighting.enabled": true,
   "editor.experimental.asyncTokenization": true,
-
-  // Markdown
-  "markdown.preview.fontFamily": "'New York', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
-  "markdown.preview.fontSize": 18,
 
   // Git
   "git.allowForcePush": true,
   "git.allowNoVerifyCommit": true,
   "git.confirmSync": false,
 
-  // EXPERIMENTAL
+  // Markdown
+  "markdown.preview.fontFamily": "'New York', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.preview.fontSize": 18,
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+
+  // Groups
+  "workbench.editor.closeEmptyGroups": true,
+
+  // Experimental
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.useInlineViewWhenSpaceIsLimited": true,
 
-  // Must-have
-  //   "window.zoomLevel": 0.2,
-  "editor.lineNumbers": "off",
-  "workbench.activityBar.location": "hidden",
-  "workbench.editor.tabActionLocation": "left",
-  "workbench.editor.showTabs": "single",
-  "workbench.editor.closeEmptyGroups": false,
-  "workbench.colorTheme": "Sun and Moon",
-  "window.titleBarStyle": "custom",
-  "window.nativeTabs": false,
-  "workbench.editor.tabCloseButton": "left",
-  "workbench.startupEditor": "none",
-  "editor.scrollbar.verticalScrollbarSize": 4,
-  "editor.scrollbar.horizontalScrollbarSize": 4,
-  "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "none",
-  "workbench.tree.renderIndentGuides": "none",
-  "editor.glyphMargin": false,
-  "editor.showFoldingControls": "never",
-  "workbench.editor.centeredLayoutFixedWidth": true,
-  "editor.renderLineHighlight": "line",
-  "editor.lightbulb.enabled": "off",
-  "workbench.sideBar.location": "right",
+  // Color customizations
   "workbench.colorCustomizations": {
     // Highlight only the active indent
     "editorIndentGuide.background1": "#00000003", // 1% alpha (can't use 0% because of the bug[?])
-    "editorIndentGuide.activeBackground1": "#0000004D" // 30% alpha
+    "editorIndentGuide.activeBackground1": "#0000004D", // 30% alpha
+
+    // TODO: Add to theme
+    "input.border": "#0000001A",
+    "scrollbarSlider.background": "#0000001A",
+    "statusBarItem.errorBackground": "#0000000D",
+    "statusBarItem.warningBackground": "#0000000D",
+
+    "terminalCursor.foreground": "#007AFF",
+
+    "editorWarning.background": "#ffcc0133",
+    "editorWarning.foreground": "#00000000",
+
+    "editorError.background": "#ff79b233",
+    "editorError.foreground": "#00000000"
   },
-  "editor.cursorStyle": "line",
-  "editor.cursorBlinking": "solid",
-  "editor.cursorSmoothCaretAnimation": "off",
-  "editor.wrappingIndent": "none",
-  "editor.inlayHints.enabled": "offUnlessPressed",
 
-  // Etc
+  // Indentation
   "editor.tabSize": 4,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.detectIndentation": true,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "search.mode": "reuseEditor",
 
+  // Additional functionality
+  "files.trimTrailingWhitespace": true,
   "editor.linkedEditing": true, // Buggy
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.quickSuggestions": {
     "strings": "on"
   },
@@ -98,12 +121,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  // Gitlens
   "gitlens.codeLens.enabled": false,
   "gitlens.views.repositories.branches.layout": "list",
   "gitlens.views.repositories.includeWorkingTree": true,
   "gitlens.views.showRelativeDateMarkers": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
 
   // Vim
   "vim.leader": " ",
@@ -112,8 +138,13 @@
   "vim.incsearch": true,
   "vim.hlsearch": false,
   "vim.cursorStylePerMode.insert": "block-outline",
+
   // Vim (auto switch input method)
   "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select {im}",
+
   // Vim (repeatable indenting)
   "vim.visualModeKeyBindings": [
     {
@@ -134,13 +165,8 @@
   ],
 
   // Vim (easymotion)
-  // <leader> <leader> s <char> Search Character
-  // <leader> <leader> f <char> Find char forward
-  // <leader> <leader> F <char> Find char backward
-  // <leader> <leader> t <char> Till char forward
-  // <leader> <leader> T <char> Till char backward
-  // <leader> <leader> w <char> Start of the word forward
-  // <leader> <leader> W <char> Start of the word backward
+  // <leader> <leader> w Start of the word forward
+  // <leader> <leader> b Start of the word backward
   "vim.easymotion": true,
   // Добавить y, h, n если не будет хватать букв
   "vim.easymotionKeys": "qwertasdfgzxcvb",
@@ -167,14 +193,5 @@
   // ; to go to the next occurence
   // <operator> z <char><char>	Perform <operator> forward to the first occurrence of <char><char>
   // <operator> Z <char><char>	Perform <operator> backward to the first occurrence of <char><char>
-  "vim.sneak": true,
-
-  // Junk
-  "telemetry.telemetryLevel": "off",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "markdown.extension.preview.autoShowPreviewToSide": true,
-  "gitlens.ai.experimental.provider": "openai",
-  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
-  "editor.accessibilitySupport": "off"
+  "vim.sneak": true
 }

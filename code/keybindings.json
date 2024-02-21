@@ -82,7 +82,7 @@
   // Quick Open Recently used editor
   {
     "key": "cmd+r",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+    "command": "workbench.action.quickOpenPreviousEditor"
   },
 
   // Breadcrumbs
@@ -126,31 +126,31 @@
     "command": "editor.action.smartSelect.expand"
   },
 
-  // Definition
+  // Diagnostics
   {
     "key": "cmd+d",
-    "command": "editor.action.revealDefinition"
+    "command": "workbench.actions.view.toggleProblems"
   },
 
   // Explorer
   {
-    "key": "F1",
+    "key": "-",
     "command": "workbench.view.explorer",
     "when": "activeViewlet != 'workbench.view.explorer'"
   },
   {
-    "key": "F1",
+    "key": "-",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.explorer'"
   },
   // Git
   {
-    "key": "F2",
+    "key": "cmd+1",
     "command": "workbench.view.scm",
     "when": "activeViewlet != 'workbench.view.scm'"
   },
   {
-    "key": "F2",
+    "key": "cmd+1",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.scm'"
   },
@@ -161,17 +161,22 @@
   },
   // Terminal
   {
-    "key": "F3",
+    "key": "cmd+2",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Diagnostics
+  {
+    "key": "cmd+3",
+    "command": "workbench.actions.view.toggleProblems"
   },
   // Find in all files
   {
-    "key": "F4",
+    "key": "cmd+4",
     "command": "workbench.view.search",
     "when": "activeViewlet != 'workbench.view.search'"
   },
   {
-    "key": "F4",
+    "key": "cmd+4",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.search'"
   },
