@@ -10,6 +10,7 @@ vim.cmd([[
 
   highlight SignColumn ctermbg=NONE
   highlight CursorLine cterm=bold
+  highlight Visual ctermbg=153 " Light blue selection
 
   " Tilde characters that identify non-existent lines
   highlight NonText ctermfg=gray
@@ -34,7 +35,10 @@ vim.cmd([[
   highlight @tag.delimiter cterm=NONE ctermfg=blue
   highlight @tag.attribute cterm=NONE ctermfg=yellow
 
-  highlight MatchParen ctermbg=blue ctermfg=white
+  highlight MatchParen ctermbg=blue ctermfg=black
   highlight @punctuation.bracket ctermfg=blue
   highlight cssBraces cterm=NONE ctermfg=blue
+
+  highlight @markup.heading cterm=bold
+  highlight @markup.list cterm=bold
 ]])

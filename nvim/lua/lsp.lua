@@ -25,14 +25,14 @@ local function lsp_attach_actions(_, bufnr)
   nmap('K', vim.lsp.buf.hover)            -- Press K twice to jump into the floating window. C-o to exit
 
   nmap('gd', vim.lsp.buf.definition)      -- To go back C-t may be useful! (go back in Tag Stack)
-  nmap('ge', vim.diagnostic.open_float)  
-  nmap('gi', vim.lsp.buf.implementation)  
-  nmap('gr', vim.lsp.buf.references)  
+  nmap('ge', vim.diagnostic.open_float)
+  nmap('gi', vim.lsp.buf.implementation)
+  nmap('gr', vim.lsp.buf.references)
 
   nmap('<leader>r', vim.lsp.buf.rename)   -- After this we need to do :wa (write all) because it could change multiple buffers across the project
 
-  nmap('[d', vim.diagnostic.goto_prev)  
-  nmap(']d', vim.diagnostic.goto_next)  
+  nmap('[d', vim.diagnostic.goto_prev)
+  nmap(']d', vim.diagnostic.goto_next)
 end
 
 -- From kickstart.nvim (https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua)

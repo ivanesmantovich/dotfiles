@@ -1,0 +1,1 @@
+brew install fd ripgrep zoxide tmux ranger cmus lazygit eza neovim chrome-cli ffmpeg yt-dlp
