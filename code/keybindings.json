@@ -1,0 +1,285 @@
+[
+  // Close editor
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // Tab switching with Ctrl-tab / Ctrl-Shift-Tab (browser-style)
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.showPreviousWindowTab"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.showNextWindowTab"
+  },
+
+  // Editor Groups
+  // Close Group
+  {
+    "key": "cmd+shift+w",
+    "command": "workbench.action.closeGroup"
+  },
+  // Move down
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  // Split down
+  {
+    "key": "cmd+shift+j",
+    "command": "workbench.action.splitEditorDown"
+  },
+  // Move up
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  // Split up
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.splitEditorUp"
+  },
+  // Move left
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  // Split left
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.splitEditorLeft"
+  },
+  // Move right
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  // Split right
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.splitEditorRight"
+  },
+  // When moving right, move to the Sidebar if the rightmost editor is focused
+  {
+    "key": "cmd+l",
+    "when": "sideBarVisible && activeEditorGroupLast",
+    "command": "workbench.action.focusSideBar"
+  },
+
+  // Open Project
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.openRecent"
+  },
+
+  // Quick Open File
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.quickOpen"
+  },
+
+  // Quick Open Recently used editor
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+  },
+
+  // Breadcrumbs
+  {
+    "key": "cmd+b",
+    "command": "breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible && breadcrumbsVisible"
+  },
+
+  // To Symbol in Editor
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.gotoSymbol"
+  },
+  // To Symbol in Workspace
+  {
+    "key": "cmd+shift+t",
+    "command": "workbench.action.showAllSymbols"
+  },
+
+  // Find
+  {
+    "key": "cmd+f",
+    "command": "actions.find"
+  },
+  // Find in all files
+  {
+    "key": "cmd+shift+f",
+    "command": "workbench.view.search"
+  },
+
+  // Wrap in HTML tag
+  {
+    "key": "alt+h",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+
+  // Expand
+  {
+    "key": "cmd+e",
+    "command": "editor.action.smartSelect.expand"
+  },
+
+  // Definition
+  {
+    "key": "cmd+d",
+    "command": "editor.action.revealDefinition"
+  },
+
+  // Explorer
+  {
+    "key": "F1",
+    "command": "workbench.view.explorer",
+    "when": "activeViewlet != 'workbench.view.explorer'"
+  },
+  {
+    "key": "F1",
+    "command": "workbench.action.closeSidebar",
+    "when": "activeViewlet == 'workbench.view.explorer'"
+  },
+  // Git
+  {
+    "key": "F2",
+    "command": "workbench.view.scm",
+    "when": "activeViewlet != 'workbench.view.scm'"
+  },
+  {
+    "key": "F2",
+    "command": "workbench.action.closeSidebar",
+    "when": "activeViewlet == 'workbench.view.scm'"
+  },
+  // Git Checkout
+  {
+    "key": "cmd+g",
+    "command": "git.checkout"
+  },
+  // Terminal
+  {
+    "key": "F3",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Find in all files
+  {
+    "key": "F4",
+    "command": "workbench.view.search",
+    "when": "activeViewlet != 'workbench.view.search'"
+  },
+  {
+    "key": "F4",
+    "command": "workbench.action.closeSidebar",
+    "when": "activeViewlet == 'workbench.view.search'"
+  },
+  // Movement inside Find in all files (ctrl-n, ctrl-p)
+  {
+    "key": "ctrl+n",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || sideBarFocus && inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor && inputBoxFocus || sideBarFocus && inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "search.action.focusSearchFromResults",
+    "when": "sideBarFocus && firstMatchFocus && searchViewletVisible"
+  },
+
+  // -------------------------
+  // Unbinding START
+  // -------------------------
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "shift+cmd+.",
+    "command": "-breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible && breadcrumbsVisible"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+up",
+    "command": "-search.focus.previousInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+  },
+  {
+    "key": "cmd+down",
+    "command": "-search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+up",
+    "command": "-search.action.focusSearchFromResults",
+    "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "cmd+k z",
+    "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "-workbench.action.search.toggleQueryDetails",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "jump-extension.jump-to-the-start-of-a-word",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+q alt+q",
+    "command": "-jump-extension.jump-to-the-start-of-a-word",
+    "when": "editorTextFocus"
+  }
+  // Free The Keys END
+]

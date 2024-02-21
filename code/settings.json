@@ -1,0 +1,180 @@
+{
+  // Font
+  "editor.fontFamily": "SF Mono",
+  "editor.fontSize": 18,
+  "terminal.integrated.fontFamily": "SF Mono",
+  "terminal.integrated.fontSize": 13,
+  "workbench.iconTheme": "chalice-icon-theme",
+
+  // Syntax Highlighting
+  "editor.semanticHighlighting.enabled": true,
+  "editor.experimental.asyncTokenization": true,
+
+  // Markdown
+  "markdown.preview.fontFamily": "'New York', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.preview.fontSize": 18,
+
+  // Git
+  "git.allowForcePush": true,
+  "git.allowNoVerifyCommit": true,
+  "git.confirmSync": false,
+
+  // EXPERIMENTAL
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": true,
+
+  // Must-have
+  //   "window.zoomLevel": 0.2,
+  "editor.lineNumbers": "off",
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.tabActionLocation": "left",
+  "workbench.editor.showTabs": "single",
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.colorTheme": "Sun and Moon",
+  "window.titleBarStyle": "custom",
+  "window.nativeTabs": false,
+  "workbench.editor.tabCloseButton": "left",
+  "workbench.startupEditor": "none",
+  "editor.scrollbar.verticalScrollbarSize": 4,
+  "editor.scrollbar.horizontalScrollbarSize": 4,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "workbench.tree.renderIndentGuides": "none",
+  "editor.glyphMargin": false,
+  "editor.showFoldingControls": "never",
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "editor.renderLineHighlight": "line",
+  "editor.lightbulb.enabled": "off",
+  "workbench.sideBar.location": "right",
+  "workbench.colorCustomizations": {
+    // Highlight only the active indent
+    "editorIndentGuide.background1": "#00000003", // 1% alpha (can't use 0% because of the bug[?])
+    "editorIndentGuide.activeBackground1": "#0000004D" // 30% alpha
+  },
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.wrappingIndent": "none",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+
+  // Etc
+  "editor.tabSize": 4,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.detectIndentation": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "search.mode": "reuseEditor",
+
+  "editor.linkedEditing": true, // Buggy
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+  // Formatting
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "gitlens.codeLens.enabled": false,
+  "gitlens.views.repositories.branches.layout": "list",
+  "gitlens.views.repositories.includeWorkingTree": true,
+  "gitlens.views.showRelativeDateMarkers": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+
+  // Vim
+  "vim.leader": " ",
+  "vim.useSystemClipboard": true,
+  "vim.ignorecase": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": false,
+  "vim.cursorStylePerMode.insert": "block-outline",
+  // Vim (auto switch input method)
+  "vim.autoSwitchInputMethod.enable": true,
+  // Vim (repeatable indenting)
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  // Paste without yanking
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+
+  // Vim (easymotion)
+  // <leader> <leader> s <char> Search Character
+  // <leader> <leader> f <char> Find char forward
+  // <leader> <leader> F <char> Find char backward
+  // <leader> <leader> t <char> Till char forward
+  // <leader> <leader> T <char> Till char backward
+  // <leader> <leader> w <char> Start of the word forward
+  // <leader> <leader> W <char> Start of the word backward
+  "vim.easymotion": true,
+  // Добавить y, h, n если не будет хватать букв
+  "vim.easymotionKeys": "qwertasdfgzxcvb",
+  "vim.easymotionMarkerBackgroundColor": "#FFCC33",
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.easymotionDimBackground": false,
+  "vim.easymotionMarkerForegroundColorOneChar": "#000000",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000000",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#000000",
+  "vim.easymotionIncSearchForegroundColor": "#000000",
+
+  // Vim (surround)
+  // y s <motion>   <desired>	  Add desired surround around text defined by <motion>
+  // d s <existing>	          Delete existing surround
+  // c s <existing> <desired>	  Change existing surround to desired
+  // S   <desired>	          Surround when in visual modes (surrounds full selection)
+  // Use (, { to add spaces. Use ), } instead for no space.
+  // Also works with HTML tags.
+  "vim.surround": true,
+
+  // Vim (sneak)
+  // s <char><char>	            Move forward to the first occurrence of <char><char>
+  // S <char><char>	            Move backward to the first occurrence of <char><char>
+  // ; to go to the next occurence
+  // <operator> z <char><char>	Perform <operator> forward to the first occurrence of <char><char>
+  // <operator> Z <char><char>	Perform <operator> backward to the first occurrence of <char><char>
+  "vim.sneak": true,
+
+  // Junk
+  "telemetry.telemetryLevel": "off",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+  "editor.accessibilitySupport": "off"
+}
