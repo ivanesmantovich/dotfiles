@@ -17,7 +17,6 @@
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.wrappingIndent": "none",
   "workbench.editor.showTabs": "none",
-  "workbench.activityBar.location": "hidden",
   "editor.renderWhitespace": "none",
   "workbench.tree.renderIndentGuides": "none",
   "editor.glyphMargin": false,
@@ -63,6 +62,9 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.useInlineViewWhenSpaceIsLimited": true,
 
+  "terminal.integrated.tabs.showActions": "never",
+  "terminal.integrated.macOptionIsMeta": true,
+
   // Color customizations
   "workbench.colorCustomizations": {
     // Highlight only the active indent
@@ -70,8 +72,15 @@
     "editorIndentGuide.activeBackground1": "#0000004D", // 30% alpha
 
     // TODO: Add to theme
-    "input.border": "#0000001A",
-    "scrollbarSlider.background": "#0000001A",
+    "input.border": "#F2F2F2",
+    "scrollbarSlider.background": "#F5F5F5",
+
+    "editorGroup.border": "#FAFAFA",
+    "titleBar.activeBackground": "#FAFAFA",
+    "sideBar.background": "#FAFAFA",
+    "statusBar.background": "#FAFAFA",
+    "statusBar.noFolderBackground": "#FAFAFA",
+
     "statusBarItem.errorBackground": "#0000000D",
     "statusBarItem.warningBackground": "#0000000D",
 
@@ -81,7 +90,9 @@
     "editorWarning.foreground": "#00000000",
 
     "editorError.background": "#ff79b233",
-    "editorError.foreground": "#00000000"
+    "editorError.foreground": "#00000000",
+
+    "editor.linkedEditingBackground": "#B3D7FF66"
   },
 
   // Indentation
@@ -90,7 +101,7 @@
 
   // Additional functionality
   "files.trimTrailingWhitespace": true,
-  "editor.linkedEditing": true, // Buggy
+  "editor.linkedEditing": true, // NOTE: Buggy, MAKES RED FLASHES ON MATCHING TAGS (editor.linkedEditingBackground)
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.quickSuggestions": {
@@ -193,5 +204,7 @@
   // ; to go to the next occurence
   // <operator> z <char><char>	Perform <operator> forward to the first occurrence of <char><char>
   // <operator> Z <char><char>	Perform <operator> backward to the first occurrence of <char><char>
-  "vim.sneak": true
+  "vim.sneak": true,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden"
 }

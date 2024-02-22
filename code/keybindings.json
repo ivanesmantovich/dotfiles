@@ -85,13 +85,6 @@
     "command": "workbench.action.quickOpenPreviousEditor"
   },
 
-  // Breadcrumbs
-  {
-    "key": "cmd+b",
-    "command": "breadcrumbs.focusAndSelect",
-    "when": "breadcrumbsPossible && breadcrumbsVisible"
-  },
-
   // To Symbol in Editor
   {
     "key": "cmd+t",
@@ -134,12 +127,12 @@
 
   // Explorer
   {
-    "key": "-",
+    "key": "cmd+b",
     "command": "workbench.view.explorer",
     "when": "activeViewlet != 'workbench.view.explorer'"
   },
   {
-    "key": "-",
+    "key": "cmd+b",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.explorer'"
   },
@@ -275,11 +268,6 @@
     "key": "shift+cmd+j",
     "command": "-workbench.action.search.toggleQueryDetails",
     "when": "inSearchEditor || searchViewletFocus"
-  },
-  {
-    "key": "cmd+j",
-    "command": "jump-extension.jump-to-the-start-of-a-word",
-    "when": "editorTextFocus"
   },
   {
     "key": "alt+q alt+q",
