@@ -1,8 +1,95 @@
 [
+  // Calva: Clear inline results
+  {
+    "key": "escape",
+    "command": "-calva.clearInlineResults"
+  },
+  {
+    "key": "ctrl+escape",
+    "command": "calva.clearInlineResults",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  // Возможно надо будет отредактировать when если будет работать не всегда
+  {
+    "key": "alt+l",
+    "command": "paredit.slurpSexpForward",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+h",
+    "command": "paredit.barfSexpForward",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+shift+9",
+    "command": "paredit.wrapAroundParens",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+shift+0",
+    "command": "paredit.wrapAroundParens",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+shift+[",
+    "command": "paredit.wrapAroundCurly",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+shift+]",
+    "command": "paredit.wrapAroundCurly",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+[",
+    "command": "paredit.wrapAroundSquare",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  {
+    "key": "alt+]",
+    "command": "paredit.wrapAroundSquare",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+  },
+  // Terminal
+  {
+    "key": "cmd+escape",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+f",
+    "command": "workbench.action.terminal.focusFind",
+    "when": "terminalFocus"
+  },
+  // All commands
+  {
+    "key": "cmd+shift+a",
+    "command": "workbench.action.showCommands"
+  },
   // Close editor
   {
     "key": "cmd+w",
-    "command": "workbench.action.closeActiveEditor"
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!terminalFocus"
   },
   // Tab switching with Ctrl-tab / Ctrl-Shift-Tab (browser-style)
   {
@@ -15,15 +102,17 @@
   },
 
   // Editor Groups
-  // Close Group
+  // Close Group instead of Editor
   {
-    "key": "cmd+shift+w",
-    "command": "workbench.action.closeGroup"
+    "key": "cmd+w",
+    "command": "workbench.action.closeEditorsInGroup",
+    "when": "!terminalFocus"
   },
   // Move down
   {
     "key": "cmd+j",
-    "command": "workbench.action.focusBelowGroup"
+    "command": "workbench.action.focusBelowGroup",
+    "when": "!terminalFocus"
   },
   // Split down
   {
@@ -33,7 +122,8 @@
   // Move up
   {
     "key": "cmd+k",
-    "command": "workbench.action.focusAboveGroup"
+    "command": "workbench.action.focusAboveGroup",
+    "when": "!terminalFocus"
   },
   // Split up
   {
@@ -88,7 +178,8 @@
   // To Symbol in Editor
   {
     "key": "cmd+t",
-    "command": "workbench.action.gotoSymbol"
+    "command": "workbench.action.gotoSymbol",
+    "when": "!terminalFocus"
   },
   // To Symbol in Workspace
   {
@@ -96,10 +187,16 @@
     "command": "workbench.action.showAllSymbols"
   },
 
+  // Hover
+  // {
+  //   "key": "shift+k",
+  //   "command": "editor.action.showHover"
+  // },
   // Find
   {
     "key": "cmd+f",
-    "command": "actions.find"
+    "command": "actions.find",
+    "when": "!terminalFocus"
   },
   // Find in all files
   {
@@ -108,12 +205,6 @@
   },
 
   // Wrap in HTML tag
-  {
-    "key": "alt+h",
-    "command": "editor.emmet.action.wrapWithAbbreviation"
-  },
-
-  // Expand
   {
     "key": "cmd+e",
     "command": "editor.action.smartSelect.expand"
@@ -136,14 +227,24 @@
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.explorer'"
   },
-  // Git
+  // Terminal
   {
     "key": "cmd+1",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Diagnostics
+  {
+    "key": "cmd+2",
+    "command": "workbench.actions.view.toggleProblems"
+  },
+  // Git
+  {
+    "key": "cmd+3",
     "command": "workbench.view.scm",
     "when": "activeViewlet != 'workbench.view.scm'"
   },
   {
-    "key": "cmd+1",
+    "key": "cmd+3",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.scm'"
   },
@@ -151,16 +252,6 @@
   {
     "key": "cmd+g",
     "command": "git.checkout"
-  },
-  // Terminal
-  {
-    "key": "cmd+2",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  // Diagnostics
-  {
-    "key": "cmd+3",
-    "command": "workbench.actions.view.toggleProblems"
   },
   // Find in all files
   {
@@ -273,6 +364,21 @@
     "key": "alt+q alt+q",
     "command": "-jump-extension.jump-to-the-start-of-a-word",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "alt+h",
+    "command": "-gitlens.showQuickFileHistory",
+    "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+  },
+  {
+    "key": "alt+h",
+    "command": "-testing.toggleTestingPeekHistory",
+    "when": "testing.isPeekVisible"
   }
   // Free The Keys END
 ]

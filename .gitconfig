@@ -32,3 +32,8 @@
 
 [branch]
 	sort = -committerdate # sort by most recently used branches instead of alphabetical
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

@@ -4,6 +4,8 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' (%b)'
 
+alias c="code"
+
 alias vi="nvim"
 alias vim="nvim"
 

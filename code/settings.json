@@ -1,22 +1,32 @@
 {
+  // Terminal
+  "terminal.integrated.fontFamily": "Iosevka Term",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.minimumContrastRatio": 1, // https://code.visualstudio.com/docs/terminal/appearance#_why-are-the-colors-in-the-terminal-not-correct
+
   // Font
-  "editor.fontFamily": "SF Mono",
-  "editor.fontSize": 18,
-  "terminal.integrated.fontFamily": "SF Mono",
-  "terminal.integrated.fontSize": 13,
+  "editor.fontFamily": "Iosevka",
+  "editor.fontSize": 16,
 
   // Themes
-  "workbench.colorTheme": "Sun and Moon",
+  "workbench.colorTheme": "Halftone",
   "workbench.iconTheme": "chalice-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
 
   // Disable the noise
+  "workbench.startupEditor": "none",
   "editor.lineNumbers": "off",
-  "editor.cursorStyle": "block",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "files.simpleDialog.enable": true, // Emacs-like Open File
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "editor.overviewRulerBorder": false,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.wrappingIndent": "none",
-  "workbench.editor.showTabs": "none",
   "editor.renderWhitespace": "none",
   "workbench.tree.renderIndentGuides": "none",
   "editor.glyphMargin": false,
@@ -29,8 +39,8 @@
   "telemetry.telemetryLevel": "off",
 
   // UI
-  "window.titleBarStyle": "custom",
-  "window.nativeTabs": false,
+  "window.titleBarStyle": "native",
+  "window.nativeTabs": true,
   "editor.smoothScrolling": true,
   "workbench.list.smoothScrolling": true,
   "editor.renderLineHighlight": "line",
@@ -48,6 +58,11 @@
   "git.allowForcePush": true,
   "git.allowNoVerifyCommit": true,
   "git.confirmSync": false,
+  "git.showActionButton": {
+    "commit": true,
+    "publish": true,
+    "sync": false
+  },
 
   // Markdown
   "markdown.preview.fontFamily": "'New York', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
@@ -70,29 +85,16 @@
     // Highlight only the active indent
     "editorIndentGuide.background1": "#00000003", // 1% alpha (can't use 0% because of the bug[?])
     "editorIndentGuide.activeBackground1": "#0000004D", // 30% alpha
-
-    // TODO: Add to theme
-    "input.border": "#F2F2F2",
-    "scrollbarSlider.background": "#F5F5F5",
-
-    "editorGroup.border": "#FAFAFA",
-    "titleBar.activeBackground": "#FAFAFA",
-    "sideBar.background": "#FAFAFA",
-    "statusBar.background": "#FAFAFA",
-    "statusBar.noFolderBackground": "#FAFAFA",
-
-    "statusBarItem.errorBackground": "#0000000D",
-    "statusBarItem.warningBackground": "#0000000D",
-
-    "terminalCursor.foreground": "#007AFF",
-
-    "editorWarning.background": "#ffcc0133",
-    "editorWarning.foreground": "#00000000",
-
-    "editorError.background": "#ff79b233",
-    "editorError.foreground": "#00000000",
-
-    "editor.linkedEditingBackground": "#B3D7FF66"
+    "terminal.ansiGreen": "#000",
+    "terminal.ansiBrightGreen": "#000",
+    "terminal.ansiBlue": "#000",
+    "terminal.ansiBrightBlue": "#000",
+    "terminal.ansiYellow": "#000",
+    "terminal.ansiBrightYellow": "#000",
+    "terminal.ansiCyan": "#000",
+    "terminal.ansiBrightCyan": "#000",
+    "terminal.ansiRed": "#000",
+    "terminal.ansiBrightRed": "#000"
   },
 
   // Indentation
@@ -156,6 +158,13 @@
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select {im}",
 
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["-"],
+      "commands": ["vsnetrw.open"],
+      "when": "editorLangId != vsnetrw && editorFocus"
+    }
+  ],
   // Vim (repeatable indenting)
   "vim.visualModeKeyBindings": [
     {
@@ -205,6 +214,8 @@
   // <operator> z <char><char>	Perform <operator> forward to the first occurrence of <char><char>
   // <operator> Z <char><char>	Perform <operator> backward to the first occurrence of <char><char>
   "vim.sneak": true,
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "hidden"
+  "svelte.enable-ts-plugin": true,
+  "workbench.editor.showTabs": "single",
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.openRepositoryInParentFolders": "never"
 }
