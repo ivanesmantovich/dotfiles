@@ -3,31 +3,44 @@ local vim = vim -- to avoid undefined vim warning all down the file
 
 -- Options. :help vim.o
 vim.o.guicursor = '' -- Cursor is always block
+vim.o.termguicolors = true
 vim.o.scrolloff = 8
 vim.o.statusline = '%t %m %#Comment#%{FugitiveHead()}%0*%=line %l out of %L' -- %t is filename, %m is modified flag, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
-vim.o.laststatus = 3 -- Global statusline
+vim.o.laststatus = 2 -- Global statusline
 vim.o.updatetime = 100
 vim.o.timeoutlen = 500 -- Time to wait for keybinds to complete
 vim.g.mapleader = ' ' -- Leader key
 vim.g.maplocalleader = ' '
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
-vim.o.number = false -- Line numbers
+vim.o.number = true -- Line numbers
 vim.o.signcolumn = 'yes:1' -- Always display sign column
 vim.opt.fillchars = { eob = ' ' } -- Hide tilde characters that identify non-existent lines
 vim.o.wrap = false -- Line wrapping
 vim.o.clipboard = 'unnamedplus' -- Enable system clipboard
+vim.o.virtualedit = "block"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
-vim.o.hlsearch = false -- Disable highlight of search results
+vim.o.hlsearch = true -- Disable highlight of search results
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.swapfile = false
 vim.o.backup = false
+vim.o.cursorline = true
 -- vim.env.path = '/Users/ive/.nvm/versions/node/v20.9.0/bin' .. (vim.env.path and vim.env.path or '')
+
+-- vim.diagnostic.config({virtual_text = false, signs = true})
+vim.diagnostic.config({virtual_text = {
+      spacing = 4,
+      source = "if_many",
+      prefix = "●",
+      -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+      -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+      -- prefix = "icons",
+    }, signs = true})
 
 
 -- Plugins.
@@ -56,10 +69,18 @@ Plug('L3MON4D3/LuaSnip')
 -- Completions Sources
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-path')
+-- Formatting
+Plug 'stevearc/conform.nvim'
+-- Linting
+Plug 'mfussenegger/nvim-lint'
 -- Telescope
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.5' })
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+-- Utils
+Plug ('echasnovski/mini.pairs', { ['branch'] = 'stable' })
+Plug('NvChad/nvim-colorizer.lua')
+Plug('ggandor/leap.nvim')
 vim.call('plug#end')
 
 
@@ -165,6 +186,45 @@ cmp.setup({
 })
 
 
+-- Formatting.
+require("conform").setup({
+  formatters_by_ft = {
+    -- Conform will run multiple formatters sequentially
+    -- python = { "isort", "black" },
+    -- Use a sub-list to run only the first available formatter
+    javascript = { { "biome" } },
+    javascriptreact = { { "biome" } },
+    typescript = { { "biome" } },
+    typescriptreact = { { "biome" } },
+    -- javascript = { { "prettierd", "prettier" } },
+    -- javascriptreact = { { "prettierd", "prettier" } },
+    -- typescript = { { "prettierd", "prettier" } },
+    -- typescriptreact = { { "prettierd", "prettier" } },
+  },
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf, lsp_fallback = false })
+    -- Uncomment to enable async formatting.
+    -- require("conform").format({ bufnr = args.buf, lsp_fallback = false, async = true })
+  end,
+})
+
+
+-- Linting.
+require('lint').linters_by_ft = {
+    javascript = {'biomejs'},
+    javascriptreact = {'biomejs'},
+    typescript = {'biomejs'},
+    typescriptreact = {'biomejs'},
+}
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+  callback = function()
+    require('lint').try_lint()
+  end,
+})
+
 -- Telescope.
 require('telescope').setup({
   extensions = {
@@ -188,8 +248,21 @@ require('telescope').setup({
 require('telescope').load_extension('fzf') -- We need to call load_extension, somewhere after setup function
 local telescope_builtin = require('telescope.builtin')
 
+-- Utils.
+require('mini.pairs').setup()
+require("colorizer").setup({
+    user_default_options = {
+        tailwind = true
+    }
+})
+require('leap').create_default_mappings()
+
 
 -- Keybindings.
+-- Sorry, not sorry
+vim.keymap.set('n', '<C-a>', '^')
+vim.keymap.set('n', '<C-e>', '$')
+-- Telescope
 vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
@@ -213,4 +286,4 @@ vim.keymap.set('x', 'p', 'P') -- Paste without yanking
 
 
 -- Colorscheme. :Inspect to check highlighting under the cursor
-vim.cmd('colorscheme sun-and-moon')
+vim.cmd('colorscheme halftone')

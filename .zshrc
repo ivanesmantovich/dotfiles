@@ -9,6 +9,8 @@ alias c="code"
 alias vi="nvim"
 alias vim="nvim"
 
+alias lg="lazygit"
+
 alias ll="eza -al --group-directories-first"
 
 PROMPT='%F{blue}%n%f on %m at %B%~%b${vcs_info_msg_0_}: '
