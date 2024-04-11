@@ -12,7 +12,7 @@ vim.o.timeoutlen = 500 -- Time to wait for keybinds to complete
 vim.g.mapleader = ' ' -- Leader key
 vim.g.maplocalleader = ' '
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
-vim.o.number = true -- Line numbers
+vim.o.number = false -- Line numbers
 vim.o.signcolumn = 'yes:1' -- Always display sign column
 vim.opt.fillchars = { eob = ' ' } -- Hide tilde characters that identify non-existent lines
 vim.o.wrap = false -- Line wrapping
@@ -56,6 +56,7 @@ Plug('tpope/vim-unimpaired')
 -- Git
 Plug('tpope/vim-fugitive')
 Plug('lewis6991/gitsigns.nvim')
+Plug('kdheepak/lazygit.nvim')
 -- Syntax tree parser, highlight, edit, and navigate code
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-treesitter/nvim-treesitter-textobjects')
@@ -249,24 +250,26 @@ require('telescope').load_extension('fzf') -- We need to call load_extension, so
 local telescope_builtin = require('telescope.builtin')
 
 -- Utils.
+-- Bracket Autopairs
 require('mini.pairs').setup()
+-- Colorizer
 require("colorizer").setup({
     user_default_options = {
         tailwind = true
     }
 })
+-- Leap
 require('leap').create_default_mappings()
+-- LazyGit
+vim.g.lazygit_floating_window_scaling_factor = 0.95
 
 
 -- Keybindings.
 -- Sorry, not sorry
 vim.keymap.set('n', '<C-a>', '^')
 vim.keymap.set('n', '<C-e>', '$')
--- Telescope
-vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
+-- Paste without yanking
+vim.keymap.set('x', 'p', 'P')
 -- Continuous Indentation
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
@@ -282,7 +285,13 @@ vim.keymap.set('n', '<C-M-k>', '<C-w>s')
 vim.keymap.set('n', '<C-M-l>', '<C-w>v')
 -- Close Split
 vim.keymap.set('n', '<C-w>', '<C-w>q')
-vim.keymap.set('x', 'p', 'P') -- Paste without yanking
+-- Telescope
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
+-- LazyGit
+vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {})
 
 
 -- Colorscheme. :Inspect to check highlighting under the cursor

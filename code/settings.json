@@ -18,6 +18,7 @@
   // Disable the noise
   "workbench.startupEditor": "none",
   "editor.lineNumbers": "off",
+  "workbench.editor.showTabs": "single",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
   "files.simpleDialog.enable": true, // Emacs-like Open File
@@ -214,8 +215,8 @@
   // <operator> z <char><char>	Perform <operator> forward to the first occurrence of <char><char>
   // <operator> Z <char><char>	Perform <operator> backward to the first occurrence of <char><char>
   "vim.sneak": true,
+
   "svelte.enable-ts-plugin": true,
-  "workbench.editor.showTabs": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "git.openRepositoryInParentFolders": "never"
 }
