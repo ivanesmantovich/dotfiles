@@ -2,8 +2,8 @@ local vim = vim -- to avoid undefined vim warning all down the file
 
 
 -- Options. :help vim.o
-vim.o.guicursor = '' -- Cursor is always block
 vim.o.termguicolors = true
+vim.o.guicursor = '' -- Cursor is always block
 vim.o.scrolloff = 8
 vim.o.winbar = "%f" -- Show filename at the top of the buffers (https://www.youtube.com/watch?v=LKW_SUucO-k)
 vim.o.statusline = '%#Comment#%{FugitiveHead()}%0* %m%=line %l out of %L' -- %t is filename, %m is modified flag, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
@@ -35,7 +35,16 @@ vim.o.cursorline = true
 -- vim.env.path = '/Users/ive/.nvm/versions/node/v20.9.0/bin' .. (vim.env.path and vim.env.path or '')
 
 -- Diagnostics.
+-- vim.diagnostic.config({virtual_text = {
+--       spacing = 4,
+--       source = "if_many",
+--       prefix = "●",
+--       -- this will set the prefix to a function that returns the diagnostics icon based on the severity
+--       -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+--       -- prefix = "icons",
+--     }, signs = true})
 vim.diagnostic.config({virtual_text = false, signs = true})
+
 -- Change diagnostic signs
 vim.cmd('call sign_define("DiagnosticSignError", {"text": "✱", "texthl": "DiagnosticSignError"})')
 vim.cmd('call sign_define("DiagnosticSignWarn", {"text": "✱", "texthl": "DiagnosticSignWarn"})')
@@ -47,7 +56,7 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
   opts.border = opts.border or 'single'
-  opts.max_width= opts.max_width or 80
+  opts.max_width= opts.max_width or 100
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
@@ -78,6 +87,7 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 -- Completions Sources
 Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-nvim-lsp-signature-help')
 Plug('hrsh7th/cmp-path')
 -- Formatting
 Plug 'stevearc/conform.nvim'
@@ -190,27 +200,29 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'path' }
   })
 })
 
 
+-- TODO: Я не хочу использовать биом если в руте нет biome.json! Переписать пик форматтера так же как линтера (засунуть в тот же цикл, formatter_to_use)
 -- Formatting.
-require("conform").setup({
-  formatters_by_ft = {
-    -- Conform will run multiple formatters sequentially
-    -- python = { "isort", "black" },
-    -- Use a sub-list to run only the first available formatter
-    javascript = { { "biome" } },
-    javascriptreact = { { "biome" } },
-    typescript = { { "biome" } },
-    typescriptreact = { { "biome" } },
-    -- javascript = { { "prettierd", "prettier" } },
-    -- javascriptreact = { { "prettierd", "prettier" } },
-    -- typescript = { { "prettierd", "prettier" } },
-    -- typescriptreact = { { "prettierd", "prettier" } },
-  },
-})
+-- require("conform").setup({
+--   formatters_by_ft = {
+--     -- Conform will run multiple formatters sequentially
+--     -- python = { "isort", "black" },
+--     -- Use a sub-list to run only the first available formatter
+--     javascript = { { "biome" } },
+--     javascriptreact = { { "biome" } },
+--     typescript = { { "biome" } },
+--     typescriptreact = { { "biome" } },
+--     -- javascript = { { "prettierd", "prettier" } },
+--     -- javascriptreact = { { "prettierd", "prettier" } },
+--     -- typescript = { { "prettierd", "prettier" } },
+--     -- typescriptreact = { { "prettierd", "prettier" } },
+--   },
+-- })
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
@@ -223,15 +235,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Linting.
 local linter_to_use
--- require('lint').linters_by_ft = {
---     javascript = {'biomejs'},
---     javascriptreact = {'biomejs'},
---     typescript = {'biomejs'},
---     typescriptreact = {'biomejs'},
--- }
+require('lint').linters_by_ft = {
+    -- javascript = {'biomejs'},
+    -- javascriptreact = {'biomejs'},
+    -- typescript = {'biomejs'},
+    -- typescriptreact = {'biomejs'},
+    css = {'stylelint'}
+}
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   callback = function()
     local ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    if ft == '' then return end -- Do not lint vim.lsp.buf.hover windows (they have a filetype of empty string '')
 
     -- Detect JS linter
     local js_fts = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}
@@ -303,9 +317,12 @@ require('telescope').setup({
 require('telescope').load_extension('fzf') -- We need to call load_extension, somewhere after setup function
 local telescope_builtin = require('telescope.builtin')
 
+
 -- Utils.
 -- Bracket Autopairs
-require('mini.pairs').setup()
+-- NOTE: Отучиться от автопар!
+-- Нажимать: Левая, правая, esc, i, enter, esc, O(big)
+-- require('mini.pairs').setup()
 -- Colorizer
 require("colorizer").setup({
     user_default_options = {
@@ -314,6 +331,8 @@ require("colorizer").setup({
 })
 -- Leap
 require('leap').create_default_mappings()
+-- GitSigns
+require('gitsigns').setup()
 -- LazyGit
 vim.g.lazygit_floating_window_scaling_factor = 0.95
 vim.g.lazygit_floating_window_border_chars = {'┌', '─', '┐', '│', '┘', '─', '└', '│'}

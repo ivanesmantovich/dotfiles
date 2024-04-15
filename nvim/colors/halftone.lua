@@ -77,4 +77,13 @@ vim.cmd([[
   highlight IlluminatedWordText gui=NONE guibg=#D1D1D1
   highlight IlluminatedWordRead gui=NONE guibg=#D1D1D1
   highlight IlluminatedWordWrite gui=NONE guibg=#D1D1D1
+
+  highlight DiffAdd guibg=NONE guifg=#B3F261
+  highlight DiffChange guibg=NONE guifg=#FFD966
+  highlight DiffDelete guibg=NONE guifg=#FF6666
+
+  highlight DiagnosticError guibg=NONE guifg=#FF6666
+  highlight DiagnosticWarn guibg=NONE guifg=#FFD966
+  highlight DiagnosticInfo guibg=NONE guifg=#007AFF
+  highlight DiagnosticOk guibg=NONE guifg=#B3F261
 ]])
