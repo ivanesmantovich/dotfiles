@@ -1,8 +1,5 @@
 local vim = vim -- to avoid undefined vim warning all down the file
 
--- White #FFFFFF
--- Black #000000
-
 vim.o.background='light'
 vim.cmd([[
   hi clear
@@ -45,7 +42,7 @@ vim.cmd([[
   highlight Special ctermfg=black guifg=#000000
 
   highlight Type ctermfg=black guifg=#373737 gui=underline
-  highlight Function cterm=bold ctermfg=black
+  highlight Function cterm=bold ctermfg=black gui=bold guifg=#000000
   highlight Comment ctermfg=darkgray gui=italic guifg=#5E5E5E
 
   highlight @keyword cterm=bold ctermfg=black gui=bold guifg=#000000
@@ -76,4 +73,8 @@ vim.cmd([[
 
   highlight LeapLabelPrimary gui=bold,nocombine guibg=#FF8200 guifg=#000000
   highlight LeapLabelSecondary gui=bold,nocombine guibg=#007AFF guifg=#000000
+
+  highlight IlluminatedWordText gui=NONE guibg=#D1D1D1
+  highlight IlluminatedWordRead gui=NONE guibg=#D1D1D1
+  highlight IlluminatedWordWrite gui=NONE guibg=#D1D1D1
 ]])

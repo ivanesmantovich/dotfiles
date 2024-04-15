@@ -9,12 +9,13 @@
 	editor = nvim
 
 [diff]
-        tool = difftastic
+	tool = Kaleidoscope
 	algorithm = histogram
 
 [difftool]
-        prompt = false
+	prompt = false
 
+	trustExitCode = true
 [difftool "difftastic"]
         cmd = difft "$LOCAL" "$REMOTE"
 
@@ -27,6 +28,7 @@
 [merge]
 	conflictStyle = zdiff3 # https://ductile.systems/zdiff3
 
+	tool = Kaleidoscope
 [push]
 	default = current # always push the local branch to a remote branch with the same name
 
@@ -37,3 +39,10 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
