@@ -53,8 +53,8 @@ vim.cmd([[
 
   highlight Search ctermbg=yellow ctermfg=black guibg=#FF8200 guifg=#000000
   highlight MatchParen ctermbg=blue ctermfg=black gui=bold guibg=#007AFF guifg=#FFFFFF
-  highlight @punctuation.bracket ctermfg=blue
-  highlight cssBraces cterm=NONE ctermfg=blue
+  highlight @punctuation.bracket ctermfg=black
+  highlight cssBraces cterm=NONE ctermfg=black
 
   highlight @type.css cterm=bold ctermfg=blue
   highlight @constant.css cterm=bold ctermfg=blue
@@ -86,4 +86,5 @@ vim.cmd([[
   highlight DiagnosticWarn guibg=NONE guifg=#FFD966
   highlight DiagnosticInfo guibg=NONE guifg=#007AFF
   highlight DiagnosticOk guibg=NONE guifg=#B3F261
+  highlight DiagnosticHint guibg=NONE guifg=#5E5E5E
 ]])

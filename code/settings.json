@@ -7,7 +7,10 @@
   "terminal.integrated.minimumContrastRatio": 1, // https://code.visualstudio.com/docs/terminal/appearance#_why-are-the-colors-in-the-terminal-not-correct
 
   // Font
-  "editor.fontFamily": "Iosevka",
+  // "editor.fontFamily": "SF Mono",
+  // "editor.fontFamily": "Iosevka",
+  "editor.fontFamily": "CommitMono",
+  "editor.fontLigatures": true,
   "editor.fontSize": 16,
 
   // Themes
