@@ -5,8 +5,8 @@ local vim = vim -- to avoid undefined vim warning all down the file
 vim.o.termguicolors = true
 vim.o.guicursor = '' -- Cursor is always block
 vim.o.scrolloff = 8
-vim.o.winbar = "%f" -- Show filename at the top of the buffers (https://www.youtube.com/watch?v=LKW_SUucO-k)
-vim.o.statusline = '%#Comment#%{FugitiveHead()}%0* %m%=line %l out of %L' -- %t is filename, %m is modified flag, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
+vim.o.winbar = "%t" -- Show filename at the top of the buffers (https://www.youtube.com/watch?v=LKW_SUucO-k)
+vim.o.statusline = '%#Comment#%{FugitiveHead()}%0* %m%=line %l out of %L, column %c' -- %t is filename, %m is modified flag, %#Comment# is beginning of gray highlighting, %{FugitiveHead()} is git branch, %0* is beginning of normal highlighting, %= is space between, %l is current line number, %L is total number of lines
 vim.o.laststatus = 3 -- Global statusline
 vim.o.updatetime = 100
 vim.o.timeoutlen = 500 -- Time to wait for keybinds to complete
@@ -102,6 +102,7 @@ Plug ('echasnovski/mini.pairs', { ['branch'] = 'stable' })
 Plug('RRethy/vim-illuminate')
 Plug('NvChad/nvim-colorizer.lua')
 Plug('ggandor/leap.nvim')
+Plug('folke/neodev.nvim')
 vim.call('plug#end')
 
 
@@ -133,8 +134,8 @@ vim.defer_fn(function()
   }
 end, 0)
 
-
 -- LSP.
+require("neodev").setup({})
 require("mason").setup()
 local mason_lspconfig = require('mason-lspconfig')
 local language_servers_to_install = {
@@ -208,21 +209,21 @@ cmp.setup({
 
 -- TODO: Я не хочу использовать биом если в руте нет biome.json! Переписать пик форматтера так же как линтера (засунуть в тот же цикл, formatter_to_use)
 -- Formatting.
--- require("conform").setup({
---   formatters_by_ft = {
---     -- Conform will run multiple formatters sequentially
---     -- python = { "isort", "black" },
---     -- Use a sub-list to run only the first available formatter
---     javascript = { { "biome" } },
---     javascriptreact = { { "biome" } },
---     typescript = { { "biome" } },
---     typescriptreact = { { "biome" } },
---     -- javascript = { { "prettierd", "prettier" } },
---     -- javascriptreact = { { "prettierd", "prettier" } },
---     -- typescript = { { "prettierd", "prettier" } },
---     -- typescriptreact = { { "prettierd", "prettier" } },
---   },
--- })
+require("conform").setup({
+  formatters_by_ft = {
+    -- Conform will run multiple formatters sequentially
+    -- python = { "isort", "black" },
+    -- Use a sub-list to run only the first available formatter
+    javascript = { { "biome" } },
+    javascriptreact = { { "biome" } },
+    typescript = { { "biome" } },
+    typescriptreact = { { "biome" } },
+    -- javascript = { { "prettierd", "prettier" } },
+    -- javascriptreact = { { "prettierd", "prettier" } },
+    -- typescript = { { "prettierd", "prettier" } },
+    -- typescriptreact = { { "prettierd", "prettier" } },
+  },
+})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
@@ -234,38 +235,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 
 -- Linting.
-local linter_to_use
+-- if vim.fn.filereadable(vim.
 require('lint').linters_by_ft = {
-    -- javascript = {'biomejs'},
-    -- javascriptreact = {'biomejs'},
-    -- typescript = {'biomejs'},
-    -- typescriptreact = {'biomejs'},
+    javascript = {'biomejs'},
+    javascriptreact = {'biomejs'},
+    typescript = {'biomejs'},
+    typescriptreact = {'biomejs'},
     css = {'stylelint'}
 }
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  callback = function()
-    local ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    if ft == '' then return end -- Do not lint vim.lsp.buf.hover windows (they have a filetype of empty string '')
-
-    -- Detect JS linter
-    local js_fts = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}
-    for _,v in ipairs(js_fts) do
-        if v == ft then
-            if vim.fn.filereadable(vim.fn.getcwd() .. "/biome.json") == 1 then linter_to_use = 'biomejs'
-            elseif vim.fn.filereadable(vim.fn.getcwd() .. "/.eslintrc.cjs") == 1 then linter_to_use = 'eslint' end
-        end
-    end
-
-    -- Detect CSS linter
-    if ft == 'css' and vim.fn.filereadable(vim.fn.getcwd() .. "/.stylelintrc") then linter_to_use = 'stylelint' end
-
-    require('lint').try_lint(linter_to_use, { ignore_errors = true })
-  end,
-})
-
+-- require('lint').linters_by_ft = {
+--     javascript = {'eslint'},
+--     javascriptreact = {'eslint'},
+--     typescript = {'eslint'},
+--     typescriptreact = {'eslint'},
+--     css = {'stylelint'}
+-- }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
-    require('lint').try_lint(linter_to_use, { ignore_errors = true })
+    require('lint').try_lint(nil, { ignore_errors = true })
   end,
 })
 
