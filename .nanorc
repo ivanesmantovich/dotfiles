@@ -4,7 +4,6 @@ unset backup
 unset breaklonglines
 unset casesensitive
 
-set nohelp
 set mouse
 set boldtext
 set minibar

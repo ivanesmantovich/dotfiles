@@ -1,4 +1,9 @@
 [
+  // Sidebar
+  {
+    "key": "cmd+s",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
   // Calva: Clear inline results
   {
     "key": "escape",
@@ -49,11 +54,6 @@
     "key": "alt+]",
     "command": "paredit.wrapAroundSquare",
     "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
-  },
-  // Terminal
-  {
-    "key": "cmd+escape",
-    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "cmd+t",
@@ -232,19 +232,14 @@
     "key": "cmd+1",
     "command": "workbench.action.terminal.toggleTerminal"
   },
-  // Diagnostics
-  {
-    "key": "cmd+2",
-    "command": "workbench.actions.view.toggleProblems"
-  },
   // Git
   {
-    "key": "cmd+3",
+    "key": "cmd+2",
     "command": "workbench.view.scm",
     "when": "activeViewlet != 'workbench.view.scm'"
   },
   {
-    "key": "cmd+3",
+    "key": "cmd+2",
     "command": "workbench.action.closeSidebar",
     "when": "activeViewlet == 'workbench.view.scm'"
   },
@@ -252,17 +247,6 @@
   {
     "key": "cmd+g",
     "command": "git.checkout"
-  },
-  // Find in all files
-  {
-    "key": "cmd+4",
-    "command": "workbench.view.search",
-    "when": "activeViewlet != 'workbench.view.search'"
-  },
-  {
-    "key": "cmd+4",
-    "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.search'"
   },
   // Movement inside Find in all files (ctrl-n, ctrl-p)
   {
@@ -379,6 +363,38 @@
     "key": "alt+h",
     "command": "-testing.toggleTestingPeekHistory",
     "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "cmd+4",
+    "command": "-workbench.action.focusFourthEditorGroup"
+  },
+  {
+    "key": "cmd+5",
+    "command": "-workbench.action.focusFifthEditorGroup"
+  },
+  {
+    "key": "cmd+6",
+    "command": "-workbench.action.focusSixthEditorGroup"
+  },
+  {
+    "key": "cmd+7",
+    "command": "-workbench.action.focusSeventhEditorGroup"
+  },
+  {
+    "key": "cmd+8",
+    "command": "-workbench.action.focusEighthEditorGroup"
+  },
+  {
+    "key": "cmd+9",
+    "command": "-workbench.action.lastEditorInGroup"
   }
   // Free The Keys END
 ]

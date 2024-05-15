@@ -1,24 +1,27 @@
 {
   // Terminal
   "terminal.integrated.fontFamily": "Iosevka Term",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.minimumContrastRatio": 1, // https://code.visualstudio.com/docs/terminal/appearance#_why-are-the-colors-in-the-terminal-not-correct
 
   // Font
-  // "editor.fontFamily": "SF Mono",
-  // "editor.fontFamily": "Iosevka",
-  "editor.fontFamily": "CommitMono",
-  "editor.fontLigatures": true,
+  "editor.fontFamily": "Iosevka",
   "editor.fontSize": 16,
+  "editor.fontLigatures": true,
 
   // Themes
   "workbench.colorTheme": "Halftone",
   "workbench.iconTheme": "chalice-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
 
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 10,
+
   // Disable the noise
+  "workbench.editor.tabActionCloseVisibility": false,
   "workbench.startupEditor": "none",
   "editor.lineNumbers": "off",
   "workbench.editor.showTabs": "single",
@@ -33,7 +36,7 @@
   "editor.wrappingIndent": "none",
   "editor.renderWhitespace": "none",
   "workbench.tree.renderIndentGuides": "none",
-  "editor.glyphMargin": false,
+  "editor.glyphMargin": true,
   "editor.showFoldingControls": "never",
   "editor.lightbulb.enabled": "off",
   "editor.minimap.enabled": false,
@@ -62,6 +65,7 @@
   "git.allowForcePush": true,
   "git.allowNoVerifyCommit": true,
   "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
   "git.showActionButton": {
     "commit": true,
     "publish": true,
@@ -137,31 +141,32 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // Enable linter fixes on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
 
   // Gitlens
   "gitlens.codeLens.enabled": false,
   "gitlens.views.repositories.branches.layout": "list",
   "gitlens.views.repositories.includeWorkingTree": true,
   "gitlens.views.showRelativeDateMarkers": false,
-  "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.ai.experimental.provider": "openai",
   "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
 
-  // Vim
+  // ------- Vim -------
   "vim.leader": " ",
   "vim.useSystemClipboard": true,
   "vim.ignorecase": true,
   "vim.incsearch": true,
   "vim.hlsearch": false,
   "vim.cursorStylePerMode.insert": "block-outline",
-
   // Vim (auto switch input method)
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/Cellar/im-select/1.0.1/bin/im-select {im}",
-
   "vim.normalModeKeyBindings": [
     {
       "before": ["-"],
@@ -187,7 +192,6 @@
       "after": ["p", "g", "v", "y"]
     }
   ],
-
   // Vim (easymotion)
   // <leader> <leader> w Start of the word forward
   // <leader> <leader> b Start of the word backward
@@ -201,7 +205,6 @@
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000000",
   "vim.easymotionMarkerForegroundColorTwoCharSecond": "#000000",
   "vim.easymotionIncSearchForegroundColor": "#000000",
-
   // Vim (surround)
   // y s <motion>   <desired>	  Add desired surround around text defined by <motion>
   // d s <existing>	          Delete existing surround
@@ -210,7 +213,6 @@
   // Use (, { to add spaces. Use ), } instead for no space.
   // Also works with HTML tags.
   "vim.surround": true,
-
   // Vim (sneak)
   // s <char><char>	            Move forward to the first occurrence of <char><char>
   // S <char><char>	            Move backward to the first occurrence of <char><char>
@@ -221,5 +223,6 @@
 
   "svelte.enable-ts-plugin": true,
   "security.workspace.trust.untrustedFiles": "open",
-  "git.openRepositoryInParentFolders": "never"
+  "bookmarks.keepBookmarksOnLineDelete": true,
+  "bookmarks.experimental.enableNewStickyEngine": false
 }
