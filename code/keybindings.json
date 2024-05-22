@@ -1,8 +1,11 @@
 [
-  // Sidebar
   {
-    "key": "cmd+s",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "cmd+enter",
+    "command": "workbench.action.tasks.runTask"
+  },
+  {
+    "key": "cmd+shift+enter",
+    "command": "workbench.action.tasks.terminate"
   },
   // Calva: Clear inline results
   {
@@ -218,35 +221,29 @@
 
   // Explorer
   {
-    "key": "cmd+b",
+    "key": "cmd+1",
     "command": "workbench.view.explorer",
     "when": "activeViewlet != 'workbench.view.explorer'"
-  },
-  {
-    "key": "cmd+b",
-    "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.explorer'"
-  },
-  // Terminal
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.terminal.toggleTerminal"
   },
   // Git
   {
     "key": "cmd+2",
-    "command": "workbench.view.scm",
-    "when": "activeViewlet != 'workbench.view.scm'"
-  },
-  {
-    "key": "cmd+2",
-    "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.scm'"
+    "command": "workbench.view.scm"
   },
   // Git Checkout
   {
     "key": "cmd+g",
     "command": "git.checkout"
+  },
+  // Problems
+  {
+    "key": "cmd+3",
+    "command": "workbench.actions.view.toggleProblems"
+  },
+  // Terminal
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   // Movement inside Find in all files (ctrl-n, ctrl-p)
   {

@@ -1,4 +1,5 @@
 {
+  "editor.stickyScroll.enabled": false,
   // Terminal
   "terminal.integrated.fontFamily": "Iosevka Term",
   "terminal.integrated.fontSize": 14,
@@ -224,5 +225,5 @@
   "svelte.enable-ts-plugin": true,
   "security.workspace.trust.untrustedFiles": "open",
   "bookmarks.keepBookmarksOnLineDelete": true,
-  "bookmarks.experimental.enableNewStickyEngine": false
+  "bookmarks.experimental.enableNewStickyEngine": false,
 }
