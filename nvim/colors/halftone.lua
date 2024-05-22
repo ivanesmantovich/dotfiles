@@ -17,6 +17,9 @@ vim.cmd([[
   highlight LineNr ctermfg=gray guifg=#5E5E5E
   highlight CursorLineNr cterm=bold gui=bold guifg=#000000
 
+  highlight WinBar gui=bold,italic guifg=#000000
+  highlight WinBarNC gui=italic guifg=#000000
+
   highlight Directory gui=bold guifg=#000000
 
   highlight Title gui=bold guifg=#000000
@@ -31,7 +34,7 @@ vim.cmd([[
 
   highlight CmpItemAbbrMatch gui=bold
 
-  highlight VertSplit ctermfg=black ctermbg=NONE guifg=#000000 guibg=NONE
+  highlight VertSplit ctermfg=black ctermbg=NONE guifg=#cccccc guibg=NONE
 
   highlight Constant ctermfg=black guifg=#000000
   highlight Error ctermfg=black guibg=#FFEDEB guifg=#000000

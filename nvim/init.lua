@@ -103,6 +103,8 @@ Plug('RRethy/vim-illuminate')
 Plug('NvChad/nvim-colorizer.lua')
 Plug('ggandor/leap.nvim')
 Plug('folke/neodev.nvim')
+-- TODO: Plug https://github.com/tpope/vim-dadbod (https://www.youtube.com/watch?v=ALGBuFLzDSA)
+-- TODO: Plug https://github.com/stevearc/dressing.nvim
 vim.call('plug#end')
 
 
@@ -152,12 +154,10 @@ local function lsp_attach_actions(_, bufnr)
   local function nmap(what_to_press, what_to_execute)
     vim.keymap.set('n', what_to_press, what_to_execute, { buffer = bufnr })
   end
-  nmap('K', vim.lsp.buf.hover)            -- Press K twice to jump into the floating window. C-o to exit
-  nmap('gd', vim.lsp.buf.definition)      -- To go back C-t may be useful! (go back in Tag Stack)
+  nmap('gh', vim.lsp.buf.hover)            -- Press K twice to jump into the floating window. C-o to exit
   nmap('ge', vim.diagnostic.open_float)
   nmap('gi', vim.lsp.buf.implementation)
-  nmap('gr', vim.lsp.buf.references)
-  nmap('<leader>r', vim.lsp.buf.rename)   -- After this we need to do :wa (write all) because it could change multiple buffers across the project
+  nmap('<leader>n', vim.lsp.buf.rename)   -- After this we need to do :wa (write all) because it could change multiple buffers across the project
   nmap('[d', vim.diagnostic.goto_prev)
   nmap(']d', vim.diagnostic.goto_next)
 end
@@ -207,7 +207,6 @@ cmp.setup({
 })
 
 
--- TODO: Я не хочу использовать биом если в руте нет biome.json! Переписать пик форматтера так же как линтера (засунуть в тот же цикл, formatter_to_use)
 -- Formatting.
 require("conform").setup({
   formatters_by_ft = {
@@ -218,10 +217,6 @@ require("conform").setup({
     javascriptreact = { { "biome" } },
     typescript = { { "biome" } },
     typescriptreact = { { "biome" } },
-    -- javascript = { { "prettierd", "prettier" } },
-    -- javascriptreact = { { "prettierd", "prettier" } },
-    -- typescript = { { "prettierd", "prettier" } },
-    -- typescriptreact = { { "prettierd", "prettier" } },
   },
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -235,7 +230,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 
 -- Linting.
--- if vim.fn.filereadable(vim.
 require('lint').linters_by_ft = {
     javascript = {'biomejs'},
     javascriptreact = {'biomejs'},
@@ -243,13 +237,6 @@ require('lint').linters_by_ft = {
     typescriptreact = {'biomejs'},
     css = {'stylelint'}
 }
--- require('lint').linters_by_ft = {
---     javascript = {'eslint'},
---     javascriptreact = {'eslint'},
---     typescript = {'eslint'},
---     typescriptreact = {'eslint'},
---     css = {'stylelint'}
--- }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     require('lint').try_lint(nil, { ignore_errors = true })
@@ -258,6 +245,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 -- Telescope.
 local putils = require("telescope.previewers.utils")
+local conf = require('telescope.config').values
 require('telescope').setup({
   extensions = {
     fzf = {
@@ -268,6 +256,7 @@ require('telescope').setup({
     }
   },
   defaults = {
+    vimgrep_arguments = table.insert(conf.vimgrep_arguments, '--fixed-strings'), -- Disable regexp
     layout_strategy = 'vertical',
     layout_config = { height = 0.98, width = 0.95 },
     mappings = {
@@ -347,10 +336,13 @@ vim.keymap.set('n', '<C-M-l>', '<C-w>v')
 -- Close Split
 vim.keymap.set('n', '<C-w>', '<C-w>q')
 -- Telescope
+vim.keymap.set('n', '<leader>r', telescope_builtin.resume, {})
 vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
+vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, {}) -- To go back C-t may be useful! (go back in Tag Stack)
+vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, {})
 -- LazyGit
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {})
 
