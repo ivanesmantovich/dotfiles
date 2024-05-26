@@ -17,8 +17,8 @@ vim.cmd([[
   highlight LineNr ctermfg=gray guifg=#5E5E5E
   highlight CursorLineNr cterm=bold gui=bold guifg=#000000
 
-  highlight WinBar gui=bold,italic guifg=#000000
-  highlight WinBarNC gui=italic guifg=#000000
+  highlight WinBar gui=bold,italic guifg=#000000 guibg=#ffffff
+  highlight WinBarNC gui=italic guifg=#000000 guibg=#ffffff
 
   highlight Directory gui=bold guifg=#000000
 

@@ -105,6 +105,7 @@ Plug('ggandor/leap.nvim')
 Plug('folke/neodev.nvim')
 -- TODO: Plug https://github.com/tpope/vim-dadbod (https://www.youtube.com/watch?v=ALGBuFLzDSA)
 -- TODO: Plug https://github.com/stevearc/dressing.nvim
+-- TODO: Plug https://github.com/lukas-reineke/indent-blankline.nvim?tab=readme-ov-file#scope
 vim.call('plug#end')
 
 
@@ -246,6 +247,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- Telescope.
 local putils = require("telescope.previewers.utils")
 local conf = require('telescope.config').values
+local actions = require("telescope.actions")
 require('telescope').setup({
   extensions = {
     fzf = {
@@ -261,6 +263,7 @@ require('telescope').setup({
     layout_config = { height = 0.98, width = 0.95 },
     mappings = {
       i = {
+        ["<esc>"] = actions.close,
         ["<C-h>"] = "which_key"
       }
     },
@@ -334,7 +337,7 @@ vim.keymap.set('n', '<C-M-j>', '<C-w>s')
 vim.keymap.set('n', '<C-M-k>', '<C-w>s')
 vim.keymap.set('n', '<C-M-l>', '<C-w>v')
 -- Close Split
-vim.keymap.set('n', '<C-w>', '<C-w>q')
+vim.keymap.set('n', '<C-w>', '<C-w>q', {nowait = true})
 -- Telescope
 vim.keymap.set('n', '<leader>r', telescope_builtin.resume, {})
 vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
