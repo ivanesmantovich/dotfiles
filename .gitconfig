@@ -6,7 +6,7 @@
 	insteadOf = https://github.com/
 
 [core]
-	editor = nvim
+	editor = nano
 
 [diff]
 	tool = Kaleidoscope
