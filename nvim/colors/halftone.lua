@@ -29,12 +29,14 @@ vim.cmd([[
   hi! Normal ctermbg=NONE guibg=NONE
   hi! NonText ctermbg=NONE guibg=NONE
   highlight Pmenu ctermbg=NONE guibg=NONE guifg=#000000
-  highlight PmenuSel ctermbg=gray guibg=#F1F1F0
+  highlight PmenuSel ctermbg=gray guibg=#F1F1F0 guifg=#000000
   highlight Float ctermbg=NONE guibg=NONE guifg=#000000
+  highlight NormalFloat ctermbg=NONE guibg=NONE
 
   highlight CmpItemAbbrMatch gui=bold
 
   highlight VertSplit ctermfg=black ctermbg=NONE guifg=#cccccc guibg=NONE
+  highlight WinSeparator ctermfg=black ctermbg=NONE guifg=#cccccc guibg=NONE
 
   highlight Constant ctermfg=black guifg=#000000
   highlight Error ctermfg=black guibg=#FFEDEB guifg=#000000
@@ -54,7 +56,9 @@ vim.cmd([[
   highlight @tag.delimiter cterm=NONE ctermfg=blue gui=NONE
   highlight @tag.attribute cterm=NONE ctermfg=yellow gui=NONE
 
-  highlight Search ctermbg=yellow ctermfg=black guibg=#FF8200 guifg=#000000
+  highlight Search ctermbg=white ctermfg=black guibg=#FF8200 guifg=#000000
+  highlight CurSearch ctermbg=white ctermfg=black guibg=#D1D1D1 guifg=#000000
+  highlight IncSearch ctermbg=white ctermfg=black guibg=#D1D1D1 guifg=#000000
   highlight MatchParen ctermbg=blue ctermfg=black gui=bold guibg=#007AFF guifg=#FFFFFF
   highlight @punctuation.bracket ctermfg=black
   highlight cssBraces cterm=NONE ctermfg=black
@@ -76,10 +80,6 @@ vim.cmd([[
 
   highlight LeapLabelPrimary gui=bold,nocombine guibg=#FF8200 guifg=#000000
   highlight LeapLabelSecondary gui=bold,nocombine guibg=#007AFF guifg=#000000
-
-  highlight IlluminatedWordText gui=NONE guibg=#D1D1D1
-  highlight IlluminatedWordRead gui=NONE guibg=#D1D1D1
-  highlight IlluminatedWordWrite gui=NONE guibg=#D1D1D1
 
   highlight DiffAdd guibg=NONE guifg=#B3F261
   highlight DiffChange guibg=NONE guifg=#FFD966

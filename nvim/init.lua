@@ -24,7 +24,6 @@ vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
-vim.o.hlsearch = false -- Disable highlight of search results
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -95,11 +94,9 @@ Plug 'stevearc/conform.nvim'
 Plug 'mfussenegger/nvim-lint'
 -- Telescope
 Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.5' })
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.6' })
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 -- Utils
-Plug ('echasnovski/mini.pairs', { ['branch'] = 'stable' })
-Plug('RRethy/vim-illuminate')
 Plug('NvChad/nvim-colorizer.lua')
 Plug('ggandor/leap.nvim')
 Plug('folke/neodev.nvim')
@@ -298,10 +295,6 @@ local telescope_builtin = require('telescope.builtin')
 
 
 -- Utils.
--- Bracket Autopairs
--- NOTE: Отучиться от автопар!
--- Нажимать: Левая, правая, esc, i, enter, esc, O(big)
--- require('mini.pairs').setup()
 -- Colorizer
 require("colorizer").setup({
     user_default_options = {
